@@ -198,6 +198,7 @@ public class DialogsFragment extends Fragment implements View.OnClickListener {
                 timePickerDialog.show();
                 break;
 
+//                关注一下这个.底部对话框
             case R.id.btn_dialog_9:
                 final BottomSheetDialog mBottomSheetDialog = new BottomSheetDialog(getContext());
                 View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_bottom_sheet, null);

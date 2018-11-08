@@ -2,7 +2,6 @@ package com.eajy.materialdesigndemo.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -28,13 +27,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
-import com.eajy.materialdesigndemo.Constant;
 import com.eajy.materialdesigndemo.R;
 import com.eajy.materialdesigndemo.adapter.FragmentAdapter;
 import com.eajy.materialdesigndemo.fragment.CardsFragment;
 import com.eajy.materialdesigndemo.fragment.DialogsFragment;
 import com.eajy.materialdesigndemo.fragment.WidgetsFragment;
-import com.eajy.materialdesigndemo.util.AppUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -122,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void initView() {
+//        ToolBar和DrawerLayout的结合
         Toolbar toolbar = findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
 
@@ -131,8 +129,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+//        菜单功能
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);//onNavigationItemSelected
         navigationView.setItemIconTintList(null);
 
         View headerView = navigationView.getHeaderView(0);

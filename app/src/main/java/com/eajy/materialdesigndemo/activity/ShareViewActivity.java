@@ -86,6 +86,7 @@ public class ShareViewActivity extends AppCompatActivity {
         tv_share_view_tip.startAnimation(alphaAnimation);
     }
 
+    // TODO: 2018/11/8 值动画的实在是忘记了啊???????????
     View.OnTouchListener touchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {

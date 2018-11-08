@@ -106,13 +106,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_recycler_item_show);
             recyclerViewHolder.mView.startAnimation(animation);
 
+//            上中颜色逐渐变淡下种颜色逐渐加深.
             AlphaAnimation aa1 = new AlphaAnimation(1.0f, 0.1f);
-            aa1.setDuration(400);
+            aa1.setDuration(2000);
             recyclerViewHolder.rela_round.startAnimation(aa1);
 
             AlphaAnimation aa = new AlphaAnimation(0.1f, 1.0f);
-            aa.setDuration(400);
+            aa.setDuration(2000);
 
+//            每刷新一次color加一
             if (color == 1) {
                 recyclerViewHolder.rela_round.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.google_blue)));
             } else if (color == 2) {
@@ -127,11 +129,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             recyclerViewHolder.rela_round.startAnimation(aa);
 
+            recyclerViewHolder.tv_recycler_item_1.setText(R.string.tv_recycler_item_1 + "__" + position);
+
             recyclerViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, ShareViewActivity.class);
                     intent.putExtra("color", color);
+//                    过度动画.
                     context.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation
                             ((Activity) context, recyclerViewHolder.rela_round, "shareView").toBundle());
                 }
@@ -158,6 +163,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
 
+    // 移除.
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
         Collections.swap(mItems, fromPosition, toPosition);
@@ -183,11 +189,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private class RecyclerViewHolder extends RecyclerView.ViewHolder {
         private View mView;
         private RelativeLayout rela_round;
+        TextView tv_recycler_item_1;
 
         private RecyclerViewHolder(View itemView) {
             super(itemView);
             mView = itemView;
             rela_round = itemView.findViewById(R.id.rela_round);
+            tv_recycler_item_1 = (TextView) itemView.findViewById(R.id.tv_recycler_item_1);
         }
     }
 

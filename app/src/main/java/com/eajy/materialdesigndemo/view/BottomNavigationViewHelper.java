@@ -25,6 +25,7 @@ public class BottomNavigationViewHelper {
 
             for (int i = 0; i < menuView.getChildCount(); i++) {
                 BottomNavigationItemView itemView = (BottomNavigationItemView) menuView.getChildAt(i);
+                //false:当我们iteam是大于3的时候,我们获取到 mShifingMode,设置为false,就会平分了!
                 itemView.setShiftingMode(false);
                 itemView.setChecked(itemView.getItemData().isChecked());
             }

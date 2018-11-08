@@ -75,6 +75,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         adapter = new RecyclerViewAdapter(this);
         mRecyclerView.setAdapter(adapter);
+//        还是需要添加Adapter的itemType(),还是没有包装类型比较好.
         adapter.addHeader();
         adapter.setItems(data);
         adapter.addFooter();
@@ -87,6 +88,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
             }
         });
 
+//        滑动删除的做法,前边已有案例.
         ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(adapter);
         ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(mRecyclerView);

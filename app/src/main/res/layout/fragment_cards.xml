@@ -11,10 +11,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- 简单的按压效果 -->
         <include layout="@layout/card_main_1" />
 
+        <!-- 水波纹的按压效果 -->
+        <!-- 关注红心效果 -->
         <include layout="@layout/card_main_2" />
 
+        <!-- 忽略以下 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

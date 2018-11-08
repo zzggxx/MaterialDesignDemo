@@ -77,7 +77,7 @@ public class CardsFragment extends Fragment implements View.OnClickListener, Vie
         card_main_1_4_1 = nestedScrollView.findViewById(R.id.card_main_1_4_1);
         card_main_1_4_2 = nestedScrollView.findViewById(R.id.card_main_1_4_2);
 
-        Glide.with(getContext()).load(R.drawable.material_design_2).apply(new RequestOptions().fitCenter()).into(img_main_card_1);
+//        Glide.with(getContext()).load(R.drawable.material_design_2).apply(new RequestOptions().fitCenter()).into(img_main_card_1);
         Glide.with(getContext()).load(R.drawable.material_design_4).apply(new RequestOptions().fitCenter()).into(img_main_card_2);
         Glide.with(getContext()).load(R.drawable.material_design_11).apply(new RequestOptions().fitCenter()).into(img_card_main_3);
         Glide.with(getContext()).load(R.drawable.material_design_1).apply(new RequestOptions().fitCenter()).into(img_main_card_41);
@@ -135,6 +135,7 @@ public class CardsFragment extends Fragment implements View.OnClickListener, Vie
         switch (view.getId()) {
 
             case R.id.btn_card_main1_action1:
+//                外层没有协调者所以只是简单的snackbar.
                 Snackbar.make(view, getString(R.string.main_flat_button_1_clicked), Snackbar.LENGTH_SHORT).show();
                 break;
 
@@ -158,11 +159,9 @@ public class CardsFragment extends Fragment implements View.OnClickListener, Vie
                 if (!isFavoriteClicked) {
                     img_main_card2_favorite.setImageResource(R.drawable.ic_favorite_black_24dp);
                     img_main_card2_favorite.startAnimation(alphaAnimationShowIcon);
-                    img_main_card2_favorite.startAnimation(alphaAnimationShowIcon);
                     isFavoriteClicked = true;
                 } else {
                     img_main_card2_favorite.setImageResource(R.drawable.ic_favorite_border_black_24dp);
-                    img_main_card2_favorite.startAnimation(alphaAnimationShowIcon);
                     img_main_card2_favorite.startAnimation(alphaAnimationShowIcon);
                     isFavoriteClicked = false;
                 }

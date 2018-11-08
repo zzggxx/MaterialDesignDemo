@@ -13,7 +13,7 @@
     <color name="black_overlay">#66000000</color>
     <color name="activity_background">#EEEEEE</color>
     <color name="transparent">#00000000</color>
-    <color name="main_background">#EEEEEE</color>
+    <color name="main_background">#ffffff</color>
     <color name="google_assistant_background">#F5F5F5</color>
 
     <!-- Material Design Color - Color palette -->
